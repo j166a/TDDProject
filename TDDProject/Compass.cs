@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace TDDProject
 {
-    internal class Compass
+    public class Compass
     {
-    }
+        public Point Point;
+
+        public static Point Rotate(Point point, Direction direction)
+        {
+            return Point.SOUTH;
+        }
+     }
 }
