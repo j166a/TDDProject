@@ -59,7 +59,6 @@ namespace TDDProject
             //    {
             //        throw new ArgumentException("Invalid direction");
             //    }
-            //}
         }
     }
 }

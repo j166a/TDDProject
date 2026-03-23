@@ -10,9 +10,24 @@ namespace TDDProject.Tests
         public void Setup()
         {
         }
-
         [Test]
         public void Rotate_ShouldReturnPoint()
+        {
+            //ARRANGE
+            Compass compass = new Compass();
+            Point testPoint = Point.NORTH;
+            Direction testDirection = Direction.RIGHT;
+
+            //ACT
+            Point result = compass.Rotate(testPoint, testDirection);
+
+            //ASSERT
+            Assert.That(result, Is.EqualTo(Point.EAST));
+
+        }
+
+        [Test]
+        public void Rotate_ShouldReturnPoint_IfDirectionIsRight()
         {
             //ARRANGE
             Compass compass = new Compass();
@@ -36,7 +51,7 @@ namespace TDDProject.Tests
 
         }
         [Test]
-        public void Rotate_ShouldReturnPointLeft()
+        public void Rotate_ShouldReturnPoint_IfDirectionIsLeft()
         {
             //ARRANGE
             Compass compass = new Compass();
@@ -55,7 +70,6 @@ namespace TDDProject.Tests
                 Assert.That(result3, Is.EqualTo(Point.NORTH));
                 Assert.That(result4, Is.EqualTo(Point.EAST));
             });
-
         }
     }
 }
