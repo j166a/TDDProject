@@ -12,7 +12,19 @@ namespace TDDProject
 
         public Point Rotate(Point point, Direction direction)
         {
-            return Point.EAST;
+            switch (point)
+            {
+                case Point.WEST:
+                    return Point.NORTH;
+                case Point.NORTH:
+                    return Point.EAST;
+                case Point.EAST:
+                    return Point.SOUTH;
+                case Point.SOUTH:
+                    return Point.WEST;
+                default:
+                    throw new ArgumentException("Invalid point");
+            }
         }
      }
 }

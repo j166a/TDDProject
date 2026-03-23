@@ -6,10 +6,10 @@ namespace TDDProject.Tests
 {
     public class Tests
     {
-        //[SetUp]
-        //public void Setup()
-        //{
-        //}
+        [SetUp]
+        public void Setup()
+        {
+        }
 
         [Test]
         public void Rotate_ShouldReturnPoint()
@@ -20,11 +20,19 @@ namespace TDDProject.Tests
             Direction testDirection = Direction.RIGHT;
 
             //ACT
-            Point result = compass.Rotate(testPoint, testDirection);
+            Point result1 = compass.Rotate(Point.WEST, testDirection);
+            Point result2 = compass.Rotate(Point.NORTH, testDirection);
+            Point result3 = compass.Rotate(Point.EAST, testDirection);
+            Point result4 = compass.Rotate(Point.SOUTH, testDirection);
 
             //ASSERT
-            Assert.That(result, Is.EqualTo(Point.EAST));
-
+            Assert.Multiple(() =>
+            {
+                Assert.That(result1, Is.EqualTo(Point.NORTH));
+                Assert.That(result2, Is.EqualTo(Point.EAST));
+                Assert.That(result3, Is.EqualTo(Point.SOUTH));
+                Assert.That(result4, Is.EqualTo(Point.WEST));
+            });
 
         }
 
