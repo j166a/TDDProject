@@ -10,9 +10,9 @@ namespace TDDProject
     {
         public Point Point;
 
-        public static Point Rotate(Point point, Direction direction)
+        public Point Rotate(Point point, Direction direction)
         {
-            return Point.SOUTH;
+            return Point.EAST;
         }
      }
 }

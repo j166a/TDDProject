@@ -20,11 +20,13 @@ namespace TDDProject.Tests
             Direction testDirection = Direction.RIGHT;
 
             //ACT
-            Point result = Rotate(testPoint, testDirection);
+            Point result = compass.Rotate(testPoint, testDirection);
 
             //ASSERT
             Assert.That(result, Is.EqualTo(Point.EAST));
 
+
         }
+
     }
 }
