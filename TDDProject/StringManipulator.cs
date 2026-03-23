@@ -8,16 +8,17 @@ namespace TDDProject
 {
     public class StringManipulator
     {
-        public static char[] ReverseString(string input)
+        public static string ReverseString(string input)
         {
-            char[] stringToCharArray = input.ToCharArray();
-            return stringToCharArray;
+            char[] inputToArray = input.ToCharArray();
+            Array.Reverse(inputToArray);
+            string reversedInput = new string(inputToArray);
+            return reversedInput;
         }
         public static bool IsPalindrome(string input)
         {
-            // TODO: Implement the logic to check if the input string is a palindrome
-            // (A palindrome = same forwards as backwards)
-            return false;
+            bool variable = input == ReverseString(input);
+            return variable;
         }
     }
 }
