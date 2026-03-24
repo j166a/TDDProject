@@ -31,7 +31,6 @@ namespace TDDProject.Tests
         {
             //ARRANGE
             Compass compass = new Compass();
-            Point testPoint = Point.NORTH;
             Direction testDirection = Direction.RIGHT;
 
             //ACT
